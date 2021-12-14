@@ -7,7 +7,7 @@ window.addEventListener("load", function() {
     const list = document.getElementById("faultyItems");
     
     list.style.visibility = "hidden";
-    
+
     form.addEventListener("submit", function(event) {
         event.preventDefault();
 
@@ -24,7 +24,6 @@ window.addEventListener("load", function() {
         }
 
         formSubmission(document,list,pilotName.value,copilotName.value,fuelLevel.value,cargoMass.value);
-        return document;
     });
     
     let listedPlanets;

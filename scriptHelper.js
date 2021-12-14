@@ -40,11 +40,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     else if (cargoLevel > 10000) { unReady(document.getElementById(StatusList[3]),"Cargo mass too heavy for launch"); }
     else {
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
-        launchStatus.color = "rgb(65, 159, 106)";
+        launchStatus.style.color = "rgb(65, 159, 106)";
         list.style.visibility = "visible";
     }
-
-    return document;
 }
 
 async function myFetch() {
