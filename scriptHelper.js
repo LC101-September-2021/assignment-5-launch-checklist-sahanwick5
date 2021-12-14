@@ -37,6 +37,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
     if (fuelLevel < 10000) { unReady(document.getElementById(StatusList[2]),"Fuel level too low for launch"); }
     if (cargoLevel > 10000) { unReady(document.getElementById(StatusList[3]),"Cargo mass too high for launch"); }
+
+    return document;
 }
 
 async function myFetch() {
