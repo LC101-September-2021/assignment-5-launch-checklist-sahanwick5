@@ -1,8 +1,6 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
-
-
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     //const getElement = document.getElementById
     document.getElementById("missionTarget").innerHTML = `
@@ -19,37 +17,29 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-    if (testInput == null) { return "Empty"; }
+    if (testInput === "") { return "Empty"; }
     if (isNaN(testInput)) { return "Not a number"; }
     else { return "Is a number"}
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    const getElement = document.getElementById
     const StatusList = ["pilotStatus", "copilotStatus", "fuelStatus", "cargoStatus"];
-    const launchStatus = getElement("launchStatus");
+    const launchStatus = document.getElementById("launchStatus");
 
-    getElement(StatusList[0]).innerHTML = `Pilot ${pilot} is ready for launch`;
-    getElement(StatusList[1]).innerHTML = `Co-pilot ${copilot} is ready for launch`;
+    document.getElementById(StatusList[0]).innerHTML = `Pilot ${pilot} is ready for launch`;
+    document.getElementById(StatusList[1]).innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
     function unReady(element, text) {
         element.innerHTML = text;
         launchStatus.innerHTML = "Shuttle not ready for launch";
-        launchStatus.styles.color = "red";
-        list.styles.visibility = "visible";
+        launchStatus.style.color = "red";
+        list.style.visibility = "visible";
     }
-    if (fuelLevel < 10000) { unReady(getElement(StatusList[2]),"Fuel level too low for launch"); }
-    if (cargoLevel > 10000) { unReady(getElement(StatusList[3]),"Cargo mass too high for launch"); }
+    if (fuelLevel < 10000) { unReady(document.getElementById(StatusList[2]),"Fuel level too low for launch"); }
+    if (cargoLevel > 10000) { unReady(document.getElementById(StatusList[3]),"Cargo mass too high for launch"); }
 }
 
 async function myFetch() {
-    // let planetsReturned;
-    // planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
-    //     response.json().then(function(json) {
-    //         return json;
-    //     });
-    // });
-    //return planetsReturned;
 
     return fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
         return response.json().then(function(json) {
