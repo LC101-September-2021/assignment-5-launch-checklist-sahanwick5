@@ -29,6 +29,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     list.style.visibility = "hidden";
     document.getElementById(StatusList[0]).innerHTML = `Pilot ${pilot} is ready for launch`;
     document.getElementById(StatusList[1]).innerHTML = `Co-pilot ${copilot} is ready for launch`;
+    document.getElementById(StatusList[2]).innerHTML = `Fuel level high enough for launch`;
+    document.getElementById(StatusList[3]).innerHTML = `Cargo mass low enough for launch`;
 
     function unReady(element, text) {
         element.innerHTML = text;
