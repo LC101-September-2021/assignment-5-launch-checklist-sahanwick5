@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
 
         if (val[0] == "Empty" || val[1] == "Empty" || val[2] == "Empty" || val[3] == "Empty") {
             alert("All fields are required!");
-        } else if (val[0] == "Is a number" || val[1] == "Is a number" || val[2] == "Not a number" || val[3] == "Not a number") {
+        } else if (val[0] == "Is a Number" || val[1] == "Is a Number" || val[2] == "Not a Number" || val[3] == "Not a Number") {
             alert("Make sure to enter valid information for each field!");
         }
 
